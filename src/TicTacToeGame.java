@@ -9,14 +9,14 @@ public class TicTacToeGame {
         playGame();
     }
 
-    // Initialize the board with dashes
+    // initialize board with dashes
     public static void initializeBoard() {
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++)
                 board[i][j] = '-';
     }
 
-    // Print the current state of the board
+    // print current state of the board
     public static void printBoard() {
         System.out.println("-------------");
         for (int i = 0; i < 3; i++) {
@@ -29,7 +29,7 @@ public class TicTacToeGame {
         }
     }
 
-    // Play the game until win or draw
+    // play game until win or draw
     public static void playGame() {
         boolean gameEnded = false;
         Scanner scanner = new Scanner(System.in);
@@ -40,7 +40,7 @@ public class TicTacToeGame {
             int row = scanner.nextInt() - 1;
             int col = scanner.nextInt() - 1;
 
-            // Validate move
+            // validate move
             if (row < 0 || row > 2 || col < 0 || col > 2) {
                 System.out.println("Invalid position! Try again.");
                 continue;
@@ -49,10 +49,8 @@ public class TicTacToeGame {
                 System.out.println("Cell already taken! Try again.");
                 continue;
             }
-
             board[row][col] = currentPlayer;
-
-            // Check win
+            // chk win
             if (hasPlayerWon(currentPlayer)) {
                 printBoard();
                 System.out.println("Player " + currentPlayer + " wins!");
@@ -62,7 +60,7 @@ public class TicTacToeGame {
                 System.out.println("It's a draw!");
                 gameEnded = true;
             } else {
-                // Switch player
+                // switch player
                 currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
             }
         }
@@ -70,7 +68,7 @@ public class TicTacToeGame {
         scanner.close();
     }
 
-    // Check if current player has won
+    // if current player won
     public static boolean hasPlayerWon(char player) {
         // Check rows
         for (int i = 0; i < 3; i++)
@@ -82,7 +80,7 @@ public class TicTacToeGame {
             if (board[0][i] == player && board[1][i] == player && board[2][i] == player)
                 return true;
 
-        // Check diagonals
+        // chk diagonals
         if (board[0][0] == player && board[1][1] == player && board[2][2] == player)
             return true;
         if (board[0][2] == player && board[1][1] == player && board[2][0] == player)
