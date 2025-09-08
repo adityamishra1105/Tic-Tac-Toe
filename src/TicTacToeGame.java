@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class TicTacToeGame {
-    private static char[][] board = new char[3][3];
+    private static final char[][] board = new char[3][3];
     private static char currentPlayer = 'X';
 
     public static void main(String[] args) {
@@ -83,10 +83,7 @@ public class TicTacToeGame {
         // chk diagonals
         if (board[0][0] == player && board[1][1] == player && board[2][2] == player)
             return true;
-        if (board[0][2] == player && board[1][1] == player && board[2][0] == player)
-            return true;
-
-        return false;
+        return board[0][2] == player && board[1][1] == player && board[2][0] == player;
     }
 
     // if board is full
