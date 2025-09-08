@@ -27,6 +27,6 @@ This project demonstrates turn-based logic, input validation, and winner detecti
    git clone https://github.com/YOUR_USERNAME/TicTacToe-Java.git
 
 ```bash
-cd TicTacToe-Java
-javac Main.java
-java Main
+   cd TicTacToe-Java
+   javac Main.java
+   java Main
